@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <workflow>
+	<description>
+This workflow illustrates basic services of Honeyspider Network: webclient and JavaScript Static Analyzer.
+	</description>
   <process id="main">
     <service name="feeder-list" id="feeder">
       <parameter name="uri">file.txt</parameter>
