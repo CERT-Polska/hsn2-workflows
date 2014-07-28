@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<workflow name="one">
+	<process id="main">
+		<service name="feeder-list" id="feeder1">
+			<parameter name="url">http://www.nask.pl/</parameter>
+			<output process='url'/>
+		</service>
+	</process>
+
+	<process id='url'>
+		<service name='thug' id='thug1'/>
+		<service name="reporter" id="reporter1">
+			<parameter name="serviceName">thug</parameter>
+			<parameter name="template">thug.jsont</parameter>
+		</service>
+		<service name='cuckoo' id='cuckoo1'/>
+		<service name="reporter" id="reporter2">
+			<parameter name="serviceName">cuckoo</parameter>
+			<parameter name="template">cuckoo.jsont</parameter>
+		</service>
+		<service name="reporter" id="reporter3">
+			<parameter name="serviceName">thug_cuckoo</parameter>
+			<parameter name="template">thug_cuckoo.jsont</parameter>
+		</service>
+	</process>
+
+</workflow>
